@@ -1,38 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, useRef, useContext } from 'react'
+import { BoldLink, BoxContainer, FormContainer, Input, MutedLink, SubmitButton } from './../../components/Common/Common'
+import { Marginer } from '../../components/Common/Marginer'
+import { AccountContext } from '../../components/AccountBox/AccountContext'
 
-import LoginModal from '../../components/Modal/LoginModal'
-
-import './LoginPage.scss'
-
-const adminUser = {
-  email: 'cro@naver.com',
-  password: 'admin1234',
-}
-
-const LoginPage = () => {
-  const [user, setUser] = useState({ name: '', email: '' })
-  const [error, setError] = useState('')
-
-  const Login = (details) => {}
-
-  const Logout = () => {
-    console.log('logout')
-  }
+const LoginPage = (props) => {
+  const { switchToSignup } = useContext(AccountContext)
 
   return (
-    <div className="login">
-      {user.email != '' ? (
-        <div className="welcome">
-          <h2>
-            welcome, <span>{user.name}</span>
-          </h2>
-          <button>Logout</button>
-        </div>
-      ) : (
-        <LoginModal Login={Login} error={error} />
-      )}
-    </div>
+    <BoxContainer>
+      <FormContainer>
+        <Input type="email" placeholder="Email" />
+        <Input type="password" placeholder="Password" />
+      </FormContainer>
+      <Marginer direction="vertical" margin={10} />
+      <MutedLink href="#">Forget your password?</MutedLink>
+      <Marginer direction="vertical" margin="1.6em" />
+      <SubmitButton type="submit">Signin</SubmitButton>
+      <Marginer direction="vertical" margin="1em" />
+      <MutedLink href="#">
+        Don't have an accoun?
+        <BoldLink href="/user/signup">Signup</BoldLink>
+      </MutedLink>
+    </BoxContainer>
   )
 }
 
-export default LoginPage
+export default { LoginPage }

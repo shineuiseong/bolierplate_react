@@ -114,7 +114,6 @@ const SignUpPage = (props) => {
             <Text size="32px" bold>
               회원가입
             </Text>
-
             <Input
               resetInput={email === '' || email === undefined ? false : true}
               type="text"
@@ -125,6 +124,7 @@ const SignUpPage = (props) => {
               }}
               placeholder="이메일을 입력해주세요."
             />
+            <br />
             {email.length > 0 ? <Span className={`${isEmail ? 'success' : 'error'}`}>{emailMessage}</Span> : <Span>이메일 형식대로 입력해주세요</Span>}
 
             <Input
@@ -186,16 +186,20 @@ const Container = styled.div`
   padding-top: 90px;
   padding-bottom: 90px;
 `
+
 const SubContainer = styled.div`
   display: flex;
   justify-content: center;
-  height: 700px;
+  //height: 700px;
   margin: auto;
-  width: 35%;
+  width: 30%;
+  max-width: 600px;
+  min-width: 400px;
+  height: 75%;
+  min-height: 500px;
   box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
   padding-top: 40px;
   border-radius: 60px;
-  background-color: white;
 `
 
 const Button = styled.button`
