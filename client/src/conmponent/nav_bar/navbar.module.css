@@ -1,0 +1,26 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+.logo{
+    width: 4.5rem;
+    height: auto;
+}
+.loginWrapper{
+    display:flex;
+    margin: 1rem;
+}
+button {
+    outline: none;
+    border:none;
+    background-color: white;
+    cursor: pointer;
+}
+.login{
+    width: 4.5rem;
+    height: auto;
+    font-size: 1.125rem;
+    
+
+}
