@@ -35,7 +35,7 @@ export class AuthService {
       if (!user) throw new CustomError('InvaildParameterError', 401, 'User not found')
       const { _id, nickName, email } = user
       const accessToken = await user.generateAccessToken()
-      return { decodeSuccess, _id, nickName, email, image, likeLanguages, accessToken }
+      return { decodeSuccess, _id, nickName, email, accessToken }
     } catch (err) {
       decodeSuccess = false
       return { decodeSuccess }

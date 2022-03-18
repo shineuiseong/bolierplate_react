@@ -19,7 +19,7 @@ const SetNicknameContainer = (props) => {
         position: 'top-right',
         autoClose: 3000,
       })
-      console.log('닉네임 최대 15글자')
+
       return
     }
 

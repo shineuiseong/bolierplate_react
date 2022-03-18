@@ -43,6 +43,14 @@ userSchema.statics.findByIdToken = async function (idToken) {
   return await User.findOne({ idToken: idToken })
 }
 
+// 사용자 수정
+userSchema.statics.modifyUser = async function (id, user) {
+  const userRecord = await User.findByIdAndUpdate(id, user, {
+    new: true,
+  })
+  return userRecord
+}
+
 // 사용자 삭제
 userSchema.statics.deleteUser = async function (id) {
   await User.findByIdAndDelete({ _id: id })

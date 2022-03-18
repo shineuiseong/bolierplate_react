@@ -22,6 +22,7 @@ export default {
   api: {
     prefix: '/api',
   },
+  issuer: 'euiseong',
 
   databaseName: process.env.MONGODB_DBNAME,
   googleClientID: process.env.GOOGLE_CLIENT_ID,

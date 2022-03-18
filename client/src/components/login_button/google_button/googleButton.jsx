@@ -17,7 +17,7 @@ const GoogleButton = ({ onClick }) => (
         <path fill="#EB4335" d="M10.2 3.853c1.914 0 3.206.809 3.943 1.484l2.878-2.746C15.253.985 12.953 0 10.199 0 6.211 0 2.766 2.237 1.09 5.492l3.297 2.503A6.152 6.152 0 0 1 10.2 3.853z"></path>
       </svg>
     </button>
-    <p className={styles.loginDescription}>Google 로그인</p>
+    <p className={styles.loginDescription}>구글 로그인</p>
   </div>
 )
 

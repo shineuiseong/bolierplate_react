@@ -1,9 +1,11 @@
 import React from 'react'
 import styles from './nickNameconfig.module.css'
+import TopBarContainer from '../../components/top_bar_container/top_bar_container'
 
 const NickNameConfig = ({ nickname, setNickname, handleLoginStep }) => {
   return (
     <>
+      <TopBarContainer></TopBarContainer>
       <h1 className={styles.title}>
         환영합니다!!
         <br />

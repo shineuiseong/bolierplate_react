@@ -19,12 +19,10 @@ const SocialLoginContainer = ({ handleClose }) => {
 
     //유저데이터로 로그인 후 acecess token 설정
     dispatch(fetchUserById(userData)).then((response) => {
-      console.log('fetchByuserID response :', response)
       const id = response.payload._id
       // 로그인이 되면? 소셜로그인 모달 닫기
       if (response.payload.loginSuccess === true) handleClose()
       else {
-        console.log('회원가입으로 들어오냐?')
         // 로그인이 안되면? 회원가입으로 고
         dispatch(setSignUpUser({ key: 'id', value: id }))
         // 로그인스탭 다음단계로!

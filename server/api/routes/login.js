@@ -48,11 +48,16 @@ export default (app) => {
       delete userDTO.id
 
       // 회원 정보 수정(등록)
+      console.log('1')
       let UserServiceInstance = new UserService({ userModel })
+      console.log('2')
       const { userRecord } = await UserServiceInstance.modifyUser(id, id, userDTO)
+      console.log('3')
       // AccessToken, RefreshToken 발급
       let AuthServiceInstance = new AuthService({ userModel })
+      console.log('4')
       const { accessToken, refreshToken } = await AuthServiceInstance.SignIn(userRecord.idToken)
+      console.log('5')
 
       res.cookie('R_AUTH', refreshToken, {
         sameSite: 'none',
