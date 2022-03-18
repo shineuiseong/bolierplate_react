@@ -56,7 +56,7 @@
 | BackEnd  | Express            |
 | Database | MongoDB (Mongoose) |
 
-## 아키텍처
+## 📚 아키텍처
 
 ![image](https://user-images.githubusercontent.com/30334829/159002321-2639da1d-017b-4d45-8def-ee25ed0f8e9f.png)
 
