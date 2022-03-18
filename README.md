@@ -37,8 +37,6 @@
 - 소셜로그인
   ![image](https://user-images.githubusercontent.com/30334829/158997776-cf545d57-1cf7-4b79-802c-78ba30e68b51.png)
 
-<br/>
-
 - 내 정보
   ![image](https://user-images.githubusercontent.com/30334829/158997955-6c3aa433-03fd-4850-add7-f3289d60a01a.png)
 
