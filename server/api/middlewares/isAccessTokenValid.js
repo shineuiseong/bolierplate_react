@@ -11,11 +11,13 @@ const isAccessTokenValid = asyncErrorWrapper(async (req, res, next) => {
     const decodeUser = await jwt.verify(token, config.jwtSecretKey)
     const user = await User.findByIdToken(decodeUser.idToken)
 
-    if (!user) throw new CustomError('JsonWebTokenError', 401, 'User not found')
-
-    req.user = {
-      _id: user.id,
-      nickName: user.nickName,
+    if (!user) {
+      throw new CustomError('JsonWebTokenError', 401, 'User not found')
+    } else {
+      req.user = {
+        _id: user.id,
+        nickName: user.nickName,
+      }
     }
     next()
   } else {

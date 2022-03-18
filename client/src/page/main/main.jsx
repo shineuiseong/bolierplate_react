@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from './main.module.css'
-import Banner from '../../conmponent/banner/banner'
-import NavBar from '../../conmponent/nav_bar/navbar'
+import Banner from '../../components/banner/banner'
+import NavBar from '../../components/nav_bar/navbar'
 
 /* 
 main page의 layout을 담당하는 component입니다. 

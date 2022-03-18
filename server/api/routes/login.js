@@ -14,21 +14,26 @@ export default (app) => {
     isTokenValidWithOauth,
     autoSignUp,
     asyncErrorWrapper(async (req, res, next) => {
-      const { idToken } = req.user
-      let AuthServiceInstance = new AuthService({ userModel })
-      const { _id, nickName, accessToken, refreshToken } = await AuthServiceInstance.SignIn(idToken)
-      res.cookie('R_AUTH', refreshToken, {
-        sameSite: 'none',
-        httpOnly: true,
-        secure: true,
-        maxAge: 1000 * 60 * 60 * 24 * 14, // 2 Week
-      })
-      return res.status(200).json({
-        loginSuccess: true,
-        _id: _id,
-        nickName: nickName,
-        accessToken: accessToken,
-      })
+      try {
+        const { idToken } = req.user
+        let AuthServiceInstance = new AuthService({ userModel })
+
+        const { _id, nickName, accessToken, refreshToken } = await AuthServiceInstance.SignIn(idToken)
+        res.cookie('R_AUTH', refreshToken, {
+          sameSite: 'none',
+          httpOnly: true,
+          secure: true,
+          maxAge: 1000 * 60 * 60 * 24 * 14, // 2 Week
+        })
+        return res.status(200).json({
+          loginSuccess: true,
+          _id: _id,
+          nickName: nickName,
+          accessToken: accessToken,
+        })
+      } catch (error) {
+        console.log(error)
+      }
     })
   )
 

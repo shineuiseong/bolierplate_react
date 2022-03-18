@@ -1,7 +1,8 @@
 import { Router } from 'express'
 import { UserService } from '../../services/index.js'
-import { User as userModel } from '../../models/User'
-
+import { User as userModel } from '../../models/User.js'
+import { asyncErrorWrapper } from '../../asyncErrorWrapper.js'
+import { nickNameDuplicationCheck } from '../middlewares/index.js'
 const route = Router()
 
 export default (app) => {
@@ -19,19 +20,6 @@ export default (app) => {
     })
   )
 
-  // 사용자 정보 상세 보기
-  route.get(
-    '/:id',
-    isUserIdValid,
-    asyncErrorWrapper(async (req, res, next) => {
-      const id = req.params.id
-
-      let UserServiceInstance = new UserService({ studyModel, userModel, notificationModel })
-      const user = await UserServiceInstance.findById(id)
-
-      res.status(200).json(user)
-    })
-  )
   // 사용자 닉네임 중복 체크
   route.get(
     '/:id/exists',

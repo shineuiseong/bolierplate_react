@@ -19,6 +19,9 @@ export default {
   logs: {
     level: process.env.LOG_LEVEL || 'silly',
   },
+  api: {
+    prefix: '/api',
+  },
 
   databaseName: process.env.MONGODB_DBNAME,
   googleClientID: process.env.GOOGLE_CLIENT_ID,

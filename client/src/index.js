@@ -16,6 +16,7 @@ import userReducer from './store/user'
 import loginStepReducer from './store/loginStep'
 import { PersistGate } from 'redux-persist/integration/react'
 
+// 리덕스 store는 새로고침하면 state 날아가는 현상이 있는데 이를 방지한다.
 const persistConfig = {
   key: 'user',
   storage,

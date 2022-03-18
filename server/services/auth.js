@@ -10,16 +10,20 @@ export class AuthService {
   // 로그인시 사용자 정보를 조회하고 Token 생성
 
   async SignIn(idToken) {
-    //  idToken으로 토큰 찾기
-    const user = await this.userModel.findByIdToken(idToken)
-    if (!user) throw new CustomError('InvaildParameterError', 401, 'user not found')
+    try {
+      //  idToken으로 토큰 찾기
+      const user = await this.userModel.findByIdToken(idToken)
+      if (!user) throw new CustomError('InvaildParameterError', 401, 'user not found')
 
-    // Access Token, Refresh Token 발급
-    const _id = user._id
-    const nickName = user.nickName
-    const accessToken = await user.generateAccessToken()
-    const refreshToken = await user.generateAccessToken()
-    return { _id, nickName, accessToken, refreshToken }
+      // Access Token, Refresh Token 발급
+      const _id = user._id
+      const nickName = user.nickName
+      const accessToken = await user.generateAccessToken()
+      const refreshToken = await user.generateAccessToken()
+      return { _id, nickName, accessToken, refreshToken }
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   async reissueAccessToken(refreshToken) {

@@ -2,21 +2,28 @@ import express from 'express'
 import path from 'path'
 import cookieParser from 'cookie-parser'
 import config from '../config/index.js'
-import bodyParser from 'body-parser'
 import cors from 'cors'
-import morgan from 'morgan'
+import routes from '../api/index.js'
 //import routes from '../api/index.js'
 
 export default (app) => {
-  app.use(
-    cors({
-      credentials: true,
-    })
-  )
+  // 프론트랑 통신연결  크로스도메인설정
+  const whitelist = ['http://localhost:3000']
+  const corsOptions = {
+    origin: function (origin, callback) {
+      const isWhitelisted = whitelist.indexOf(origin) !== -1
+      callback(null, isWhitelisted)
+    },
+    credentials: true,
+  }
 
-  app.use(morgan('combined'))
-  app.use(bodyParser.urlencoded({ extended: false }))
+  // Cors Whitelist 관리
+  app.use(cors(corsOptions))
+  app.use(express.json())
+  app.use(express.urlencoded({ extended: true }))
+  app.use(cookieParser())
   app.use(express.static(path.join(path.resolve(), 'public')))
-  app.use(bodyParser.json())
-  app.use(cookieParser(process.env.COOKIE_SECRET))
+
+  // 라우터 설정
+  app.use(config.api.prefix, routes())
 }
