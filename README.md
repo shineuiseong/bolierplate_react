@@ -32,7 +32,7 @@
 ## 💻 뷰
 
 - 메인페이지
-  ![image](https://user-images.githubusercontent.com/30334829/158940147-6df3093e-f733-4b62-8605-392a2eb103ac.png){:style="border:2px solid #000000; border-radius: 7px; padding: 0px;"}
+  ![image](https://user-images.githubusercontent.com/30334829/158940147-6df3093e-f733-4b62-8605-392a2eb103ac.png)
 
 ## 📚 기술스택
 
