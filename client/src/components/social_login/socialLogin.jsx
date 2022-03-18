@@ -19,7 +19,6 @@ const SocialLogin = ({ googleOnSuccess, googleOnFailure, googleClientId, kakaoOn
           onFailure={googleOnFailure}
           render={(renderProps) => <GoogleButton onClick={renderProps.onClick}></GoogleButton>}
         />
-
         <KakaoLogin token={kakaoClientId} onSuccess={kakaoOnSuccess} onFailure={kakaoOnFailure} render={({ onClick }) => <KakaoButton onClick={onClick}></KakaoButton>} />
       </section>
     </>

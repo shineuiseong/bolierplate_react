@@ -4,13 +4,11 @@ import userService from '../service/user_service'
 import httpClient from '../service/http_client'
 
 /* 
-
 user 관련 store를 다루는 redux store 입니다.
 createSlice를 통해 전역 user state를 생성하고,
 createAsyncThunk를 통해 user 상태를 update 합니다.
-
-
 */
+
 // action 정의
 const fetchUserByIdAction = createAction('user/fetchByIdStatus')
 const fetchUserByRefreshTokenAction = createAction('user/fetchUserByRefreshToken')
@@ -22,9 +20,7 @@ const addUserNickName = createAsyncThunk(addUserNickNameAction, async (userInfo,
   console.log('userinfo!!!', userInfo)
   const response = await authService.signUp(userInfo)
   const accessToken = response.data.accessToken
-
   httpClient.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
-
   return userInfo
 })
 
@@ -32,10 +28,8 @@ const addUserNickName = createAsyncThunk(addUserNickNameAction, async (userInfo,
 const fetchUserById = createAsyncThunk(fetchUserByIdAction, async (userData, thunkAPI) => {
   const response = await authService.login(userData.social, userData.code)
   const accessToken = response.data.accessToken
-
   // header에 access token 설정
   httpClient.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
-
   return response.data
 })
 
@@ -44,13 +38,11 @@ const fetchUserById = createAsyncThunk(fetchUserByIdAction, async (userData, thu
 const fetchUserByRefreshToken = createAsyncThunk(fetchUserByRefreshTokenAction, async (thunkAPI) => {
   // 생각해볼 것. 성공했을때만 이 data 넣어야 하나?
   const response = await authService.getUserInfo()
-
   const accessToken = response.data.accessToken
   const userInfo = {
     nickName: response.data.nickName,
     id: response.data._id,
   }
-
   // header에 access token 설정
   httpClient.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
 
@@ -60,7 +52,6 @@ const fetchUserByRefreshToken = createAsyncThunk(fetchUserByRefreshTokenAction, 
 // 사용자 정보를 수정하고 access token을 설정합니다.
 const modifyUserInfo = createAsyncThunk(modifyUserInfoAction, async (userData, { rejectWithValue }) => {
   const res = await userService.modifyUserInfo(userData.id, userData)
-
   if (res.modifySuccess) {
     const accessToken = res.user.data.accessToken
     // header에 access token 설정
@@ -68,7 +59,6 @@ const modifyUserInfo = createAsyncThunk(modifyUserInfoAction, async (userData, {
   } else {
     return rejectWithValue(res.modifySuccess)
   }
-
   return res.user.data
 })
 

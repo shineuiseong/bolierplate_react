@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom'
 import LoginUser from '../loginUser/loginUser'
 
 import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { setModalVisible } from '../../store/loginStep'
 import { clearUser, fetchUserByRefreshToken } from '../../store/user'
 
@@ -14,7 +15,6 @@ const NavBar = () => {
   const dispatch = useDispatch()
   const user = useSelector((state) => state.user)
   const history = useHistory()
-
   const modalVisible = useSelector((state) => state.loginStep.modalVisible)
 
   const openModal = () => {
@@ -50,7 +50,7 @@ const NavBar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <a>
+      <a href="/">
         <img className={styles.logo} src="/images/logo/logo.png" alt="logo" />
       </a>
       <div className={styles.loginWrapper}>

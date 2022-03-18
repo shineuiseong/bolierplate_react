@@ -43,7 +43,7 @@ const LoginUser = React.memo(() => {
 
   return (
     <div className={styles.userWrapper} onClick={handleLoginUserClick}>
-      <div className={styles.userName}>nickname</div>
+      <div className={styles.userName}>{user.nickName}</div>
 
       <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
         <path d="M7 10l5 5 5-5z"></path>

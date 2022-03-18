@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import styles from './dropdownBar.module.css'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -27,19 +27,25 @@ const DropdownBar = () => {
     dispatch(clearStep())
     // 토큰 초기화
     authService.resetToken()
+
+    //
   }
 
   return (
-    <div className={styles.menuWrapper}>
-      <ul className={styles.menu}>
-        <li className={styles.menuItem}>
-          <Link to="/setting" style={{ display: 'inline-block' }}>
-            설정
-          </Link>
-        </li>
-        <li className={styles.menuItem}>로그아웃</li>
-      </ul>
-    </div>
+    <>
+      <div className={styles.menuWrapper}>
+        <ul className={styles.menu}>
+          <li className={styles.menuItem}>
+            <Link to="/setting" style={{ display: 'inline-block' }}>
+              설정
+            </Link>
+          </li>
+          <li className={styles.menuItem} onClick={handleLogout}>
+            로그아웃
+          </li>
+        </ul>
+      </div>
+    </>
   )
 }
 export default DropdownBar

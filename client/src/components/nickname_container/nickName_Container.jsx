@@ -1,5 +1,6 @@
 import React from 'react'
 import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { nextStep, setSignUpUser } from '../../store/loginStep'
 import NickNameConfig from '../nickname_config/nickNameconfig'
