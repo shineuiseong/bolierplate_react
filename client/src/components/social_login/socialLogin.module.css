@@ -1,7 +1,7 @@
 .loginWrapper {
   margin-top: 4rem;
   width: 40%;
-  display: flex;
+  display: block;
   justify-content: space-between;
   align-items: center;
 }

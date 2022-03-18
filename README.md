@@ -34,15 +34,28 @@
 - 메인페이지
   ![image](https://user-images.githubusercontent.com/30334829/158940147-6df3093e-f733-4b62-8605-392a2eb103ac.png)
 
+- 소셜로그인
+  ![image](https://user-images.githubusercontent.com/30334829/158997776-cf545d57-1cf7-4b79-802c-78ba30e68b51.png)
+
+- 내 정보
+  ![image](https://user-images.githubusercontent.com/30334829/158997955-6c3aa433-03fd-4850-add7-f3289d60a01a.png)
+
+- 마이 페이지
+  ![image](https://user-images.githubusercontent.com/30334829/158998032-e6020bda-f0f3-49f0-9340-2993e43c7f48.png)
+
+- 닉네임 수정시 알람창
+  ![image](https://user-images.githubusercontent.com/30334829/158998173-a72d6b71-395c-4856-8d28-4f9891b0ab86.png)
+
 ## 📚 기술스택
 
-| 분야     | 사용 기술         | 비고 |
-| -------- | ----------------- | ---- |
-| FrontEnd | React, javascript |
-| BackEnd  | Express           |
-| Database | MongoDB(Mongoose) |
-| TOOL     | VSCODE,           |
+| 분야     | 사용 기술          | 비고 |
+| -------- | ------------------ | ---- |
+| FrontEnd | ReactJS            |
+| BackEnd  | Express            |
+| Database | MongoDB (Mongoose) |
 
 ## 아키텍처
 
-\*준비중
+![image](https://user-images.githubusercontent.com/30334829/159002321-2639da1d-017b-4d45-8def-ee25ed0f8e9f.png)
+
+- Amazon Ec2 설정과 배포는 차후 프로젝트에 적용해볼 예정 (22.3.18)
