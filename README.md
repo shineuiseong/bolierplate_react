@@ -12,7 +12,7 @@
 - [기능](#-기능)
 - [뷰](#-뷰)
 - [기술스택](#-기술스택)
-- [아키텍쳐](#-아키텍처)
+- [아키텍처](#-아키텍처)
 
 ## 🌻 소개
 
@@ -36,12 +36,14 @@
 
 - 소셜로그인
   ![image](https://user-images.githubusercontent.com/30334829/158997776-cf545d57-1cf7-4b79-802c-78ba30e68b51.png)
+  
+  
+- 내 정보
+![image](https://user-images.githubusercontent.com/30334829/158997955-6c3aa433-03fd-4850-add7-f3289d60a01a.png)
 
 - 마이 페이지
   ![image](https://user-images.githubusercontent.com/30334829/158998032-e6020bda-f0f3-49f0-9340-2993e43c7f48.png)
   
-- 내 정보
-  ![image](https://user-images.githubusercontent.com/30334829/158997955-6c3aa433-03fd-4850-add7-f3289d60a01a.png)
 
 - 닉네임 수정시 알람창
   ![image](https://user-images.githubusercontent.com/30334829/158998173-a72d6b71-395c-4856-8d28-4f9891b0ab86.png)
